@@ -1,4 +1,4 @@
-# S.C.I.C. -- Projeto IFMG
+# S.C.I.C. <-> Projeto IFMG
 Software Comunicativo Intracanhões
 
 O Software Comunicativo Intracanhões foi feito para ajudar a Rússia em sua guerra contra a Venezuela, fornecendo um meio de comunicação via wi-fi local entre os canhões.
