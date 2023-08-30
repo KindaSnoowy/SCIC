@@ -9,3 +9,6 @@ Todas as mensagens enviadas no SCIC ficam salvas em um log no servidor e toda ve
 
 O código deve funcionar corretamente em qualquer plataforma em que possa se rodar python, não se esqueça de baixar a biblioteca Kivy (https://pypi.org/project/Kivy/).
 Depois de inúmeros gb de espaço gastos, não conseguimos criar uma build .apk pra celular, então algum dia, em algum momento, sai uma versão pra Android. 👍
+
+Android deve funcionar corretamente se abrir o arquivo com acesso a pasta em alguma IDE como o PyDroid.
+Windows e Linux funciona corretamente na build Desktop, MacOS não foi testado.
