@@ -1,4 +1,4 @@
-# SCIC
+# S.C.I.C. -- Projeto IFMG
 Software Comunicativo Intracanhões
 
 SCIC usa Kivy e Socket para um chat simples onde vários clientes se conectam à um servidor e podem se comunicar (e planejar envio de bombas).
