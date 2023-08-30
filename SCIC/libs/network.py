@@ -1,6 +1,6 @@
 import socket, pickle
 
-ip = '192.168.66.14' # ip
+ip = '192.168.246.277' # ip
 port = 55555 # porta
 
 class Network:

@@ -33,7 +33,7 @@ falas_oppenheimer = ["SIM SOU O OPPENHEIMER",
 
 clients_connected = []
 names = []
-PATH = os.path.abspath("Server/log.txt") # Caminho absoluto (tentativa de não bugar tudo.)
+PATH = os.path.abspath("../log.txt") # Caminho absoluto (tentativa de não bugar tudo.)
 
 def _client_thread(client):
 	try:
@@ -63,7 +63,7 @@ def _client_thread(client):
 				try:
 					log = open(f"{PATH}", 'a')
 
-					if  'oppenheimer' in data['msg'].lower():
+					if 'oppenheimer' in data['msg'].lower():
 						texto = f"[{name}]:{data['msg']}\n[Oppenheimer]:{random.choice(falas_oppenheimer)}"
 					elif not data['bomba']:
 						texto = f"[{name}]:{data['msg']}"
@@ -104,5 +104,3 @@ while True:
 	print(f"Cliente conectado: {adress}")
 	clients_connected.append(conn)
 	start_new_thread(_client_thread, (conn,))
-
-
