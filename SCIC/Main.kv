@@ -1,0 +1,156 @@
+<Gerenciador>:
+    TelaInicial:
+        name: 'Tela Inicial'
+    Chat:
+        name:'chat'
+
+<Popup_error_login>:
+    auto_dismiss: False
+    size_hint: (None, None)
+    size: (350,180)
+    title: 'Alerta'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Alguem com esse nome de usuário já está logado.\nEscolha outro!'
+       
+
+        Button:
+            text: 'Ok'
+            on_release:root.ok()
+
+
+<Popup_txt>:
+    auto_dismiss: False
+    size_hint: (None, None)
+    size: (220,180)
+    title: 'Alerta'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Deseja restaurar todo o chat?'
+       
+        BoxLayout:
+            orientation: 'horizontal'
+            Button:
+                text: 'Sim'
+                on_release:root.sim()
+
+            Button:
+                text: 'Talvez'
+                on_release:root.talvez()
+
+            Button:
+                text: 'Não'
+                on_release: root.nao()
+
+<Popup_BOMBA>:
+    auto_dismiss: False
+    size_hint: (None, None)
+    size: (220,180)
+    title: 'Enviar BOMBA'
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation:'horizontal'
+            size_hint: (None, None)
+            size: (190, 30)
+            Label:
+                text:'x'
+            TextInput:
+                id: x_bomba
+
+            Label:
+                text:'y'
+            TextInput:
+                id: y_bomba
+        
+        Button:
+            text: 'Enviar'
+            on_release: root.enviar()
+            color_background: '#FF0000'
+
+
+<Chat>:
+    BoxLayout:
+
+        id: chat
+        orientation: 'vertical'
+
+        Image:
+            id: image
+            source: 'o1.png'
+        ScrollView:
+            Label:
+                id: label_msg
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: ''
+                
+
+        BoxLayout:
+            size_hint_y: None
+            height: 50
+            TextInput:
+                id: mensagem
+            BoxLayout:
+                size_hint_x: None
+                width: 90
+                orientation: 'vertical'
+                Button:
+                    id: enviar_mensagem
+                    text: 'Enviar'
+                    on_release:root.send_message()
+                Button:
+                    id: enviar_bomba
+                    text: 'Enviar BOMBA'
+                    on_release:root.send_BOMBA()
+
+
+<TelaInicial>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 150
+        spacing: 100
+
+        Label:
+            text:'SCIC'
+            font_size:80
+            pos_hint: {'center_x':0.5, 'center_y': 1}
+
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text:'Nome'
+            TextInput:
+                id:nome
+
+                size_hint_x: None
+                width: 300
+
+                size_hint_y: None
+                height: 30
+
+                pos_hint: {'center_x':0.5, 'center_y':1}
+
+
+            Button:
+                size_hint_y: None
+                height: 50
+
+                size_hint_x: None
+                width: 70
+
+                pos_hint: {'center_x':0.5, 'center_y':1}
+
+                text:'Entrar'
+                on_release: root.entrar()
+
+
+
+
+    
+    
