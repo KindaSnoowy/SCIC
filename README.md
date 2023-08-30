@@ -9,5 +9,3 @@ Todas as mensagens enviadas no SCIC ficam salvas em um log no servidor e toda ve
 
 O código deve funcionar corretamente em qualquer plataforma em que possa se rodar python, não se esqueça de baixar a biblioteca Kivy (https://pypi.org/project/Kivy/).
 Fizemos também uma versão do código com as informações da interface gráfica para Android, está disponível no repósitorio para download.
-
-Feito por Bryan e Cecote ltda.
