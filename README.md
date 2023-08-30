@@ -8,4 +8,4 @@ SCIC usa Kivy e Socket para um chat simples onde vários clientes se conectam à
 Todas as mensagens enviadas no SCIC ficam salvas em um log no servidor e toda vez que um cliente se conecta seu chat pode se atualizar de acordo com os arquivos no servidor.
 
 O código deve funcionar corretamente em qualquer plataforma em que possa se rodar python, não se esqueça de baixar a biblioteca Kivy (https://pypi.org/project/Kivy/).
-Fizemos também uma versão do código com as informações da interface gráfica para Android, está disponível no repósitorio para download.
+Depois de inúmeros gb de espaço gastos, não conseguimos criar uma build .apk pra celular, então algum dia, em algum momento, sai uma versão pra Android. 👍
