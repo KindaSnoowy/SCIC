@@ -3,12 +3,13 @@ from _thread import start_new_thread
 import pickle, os
 import random
 
-HOST = '192.168.66.14' # ip
-PORT = 55555 # porta 
+HOST = 'localhost' # ip
+PORT = 5555 # porta 
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
 	server.bind((HOST, PORT))
+	print(f"Servidor iniciado.\nHOST: {'127.0.0.1' if HOST == 'localhost' else HOST}\nPORT: {PORT}")
 except:
 	print("Servidor já aberto.")
 	
@@ -33,7 +34,7 @@ falas_oppenheimer = ["SIM SOU O OPPENHEIMER",
 
 clients_connected = []
 names = []
-PATH = os.path.abspath("../log.txt") # Caminho absoluto (tentativa de não bugar tudo.)
+PATH = os.path.abspath("log.txt") # Caminho absoluto (tentativa de não bugar tudo.)
 
 def _client_thread(client):
 	try:

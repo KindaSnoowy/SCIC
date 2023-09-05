@@ -5,11 +5,37 @@ import random
 from libs.network import Network, Login, Client_Message, Arquivo_req
 from _thread import start_new_thread
 
-network = Network()
-network.connect()
+
 
 class Gerenciador(ScreenManager):
     pass
+
+class Popup_error_ip(Popup):
+    def fechar(self):
+        self.dismiss()
+
+class Popup_IP(Popup):
+    def __init__(self, nome, **kwargs):
+        super().__init__(**kwargs)
+        self.nome = nome
+    def enviar(self):
+        global network
+        network = Network()
+        conectado = network.connect(HOST = self.ids.ip.text)
+
+        if conectado:
+            self.dismiss()
+            network.send(Login(self.nome))
+
+            data = network.recv(2048).decode()
+            if data == 'CONFIRMADO':
+                popup = Popup_txt()
+                popup.open()
+            else:
+                popup = Popup_error_login()
+                popup.open()
+        else:
+            Popup_error_ip().open()
 
 class Popup_BOMBA(Popup):
     def enviar(self):
@@ -22,12 +48,8 @@ class Popup_BOMBA(Popup):
 
 text_inicial = ''
 class Chat(Screen):
-    def __init__(self, mensagens = [], network = network, **kwargs):
-        super().__init__(**kwargs)
-        self.msgs = 0
-        self.network = network
-
     def on_enter(self):
+        self.network = network
         self.ids.label_msg.text = text_inicial
         start_new_thread(self.receive_message, ())
         
@@ -52,12 +74,9 @@ class Chat(Screen):
 class Popup_txt(Popup):
     def sim(self):
         self.dismiss()
-        
-        tela = self.parent.children[1].children[0]
+        network.send(Arquivo_req())
 
-        tela.network.send(Arquivo_req())
-
-        data = tela.network.recv(2048)
+        data = network.recv(2048)
         global text_inicial
 
         text_inicial = data.decode()
@@ -80,21 +99,9 @@ class Popup_error_login(Popup):
         self.dismiss()
 
 class TelaInicial(Screen):
-    def __init__(self, network = network, **kwargs):
-        super().__init__(**kwargs)
-        self.network = network
-
     def entrar(self):
-        self.click_entrar = True
-        self.network.send(Login(self.ids.nome.text))
-
-        data = self.network.recv(2048).decode()
-        if data == 'CONFIRMADO':
-            popup = Popup_txt()
-            popup.open()
-        else:
-            popup = Popup_error_login()
-            popup.open()
+        Popup_IP(self.ids.nome.text).open()
+        
 
 class Main(App):
     def build(self):

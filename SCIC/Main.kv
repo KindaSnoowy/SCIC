@@ -4,6 +4,38 @@
     Chat:
         name:'chat'
 
+<Popup_error_ip>:
+    size_hint: (None, None)
+    size: (350,220)
+    title: 'Erro ao conectar-se ao servidor.'
+    BoxLayout:
+        orientation:'vertical'
+        Label:
+            text: 'Não foi possível se conectar ao servidor.\nTente se conectar na mesma rede em que o \nservidor foi aberto ou tente abrir o \nservidor novamente.'
+
+        Button:
+            text: 'Fechar'
+            on_release: root.fechar()
+
+<Popup_IP>:
+    size_hint: (None, None)
+    size: (350,180)
+    title: "Insira o ip que deseja entrar"
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: ip
+            size_hint: (None, None)
+            size: (320,35)
+            pos_hint: {'center_x':0.5}
+
+        Button:
+            text:"Enviar"
+            size_hint: (None, None)
+            size: (60,50)
+            pos_hint: {'center_x':0.5}
+            on_release: root.enviar()
+
 <Popup_error_login>:
     auto_dismiss: False
     size_hint: (None, None)

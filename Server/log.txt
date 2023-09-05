@@ -1,6 +1,19 @@
-O usuário [qweqw] se conectou.
-[qweqw]:qweqwewq
-O usuário [qweqw] se conectou.
-O usuário [hguyt] se conectou.
-O usuário [hguyt] se desconectou.
-O usuário [qweqw] se desconectou.
+O usuário [bryan] se desconectou.
+O usuário [bryan] se conectou.
+O usuário [cecote] se conectou.
+O usuário [cecote] se desconectou.
+O usuário [bryan] se desconectou.
+O usuário [] se conectou.
+O usuário [] se desconectou.
+O usuário [] se conectou.
+O usuário [] se desconectou.
+O usuário [] se conectou.
+O usuário [] se desconectou.
+O usuário [bryan] se conectou.
+O usuário [bryan] se desconectou.
+O usuário [] se conectou.
+O usuário [] se desconectou.
+O usuário [bryan] se conectou.
+O usuário [bryio] se conectou.
+O usuário [bryio] se desconectou.
+O usuário [bryan] se desconectou.

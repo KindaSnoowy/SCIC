@@ -1,7 +1,7 @@
 import socket, pickle
 
-ip = '192.168.246.277' # ip
-port = 55555 # porta
+ip = '127.0.0.1' # ip
+port = 5555 # porta
 
 class Network:
 	def __init__(self):
@@ -13,8 +13,10 @@ class Network:
 
 		try:
 			self.conect.connect((self.HOST, self.PORT))
+			return True
 		except:
 			print("Servidor não iniciado.")
+			return False
 
 	def send(self, data):
 		try:
